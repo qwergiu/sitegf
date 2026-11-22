@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Мой рисунок: смайлик в шляпе</title>
+</head>
+<body>
+<!-- Выполнил: Игорь Коробейников -->
+<!-- Дата: 22.11.2026 -->
+<canvas id="canvas" width="400" height="300"></canvas>
+<script>
+const canvas = document.getElementById("canvas");
+const context = canvas.getContext("2d");
+
+// фон
+context.fillStyle = "#cfe8ff";
+context.fillRect(0, 0, 400, 300);
+
+// лицо
+context.beginPath();
+context.arc(200, 170, 100, 0, 2 * Math.PI);
+context.fillStyle = "yellow";
+context.fill();
+context.lineWidth = 2;
+context.strokeStyle = "black";
+context.stroke();
+
+// шляпа: поля
+context.beginPath();
+context.rect(110, 90, 180, 14);
+context.closePath();
+context.fillStyle = "#333333";
+context.fill();
+
+// шляпа: верх
+context.beginPath();
+context.moveTo(145, 90);
+context.lineTo(155, 30);
+context.lineTo(245, 30);
+context.lineTo(255, 90);
+context.closePath();
+context.fill();
+
+// лента на шляпе
+context.beginPath();
+context.rect(148, 68, 104, 14);
+context.closePath();
+context.fillStyle = "red";
+context.fill();
+
+// глаза
+context.beginPath();
+context.arc(165, 150, 18, 0, 2 * Math.PI);
+context.fillStyle = "white";
+context.fill();
+context.stroke();
+context.beginPath();
+context.arc(235, 150, 18, 0, 2 * Math.PI);
+context.fill();
+context.stroke();
+
+// зрачки
+context.beginPath();
+context.arc(170, 152, 8, 0, 2 * Math.PI);
+context.fillStyle = "#333333";
+context.fill();
+context.beginPath();
+context.arc(240, 152, 8, 0, 2 * Math.PI);
+context.fill();
+
+// щёки
+context.fillStyle = "#ff9aa2";
+context.beginPath();
+context.arc(140, 190, 12, 0, 2 * Math.PI);
+context.fill();
+context.beginPath();
+context.arc(260, 190, 12, 0, 2 * Math.PI);
+context.fill();
+
+// нос (треугольник)
+context.beginPath();
+context.moveTo(200, 160);
+context.lineTo(190, 185);
+context.lineTo(210, 185);
+context.closePath();
+context.fillStyle = "orange";
+context.fill();
+context.stroke();
+
+// рот
+context.beginPath();
+context.moveTo(145, 210);
+context.quadraticCurveTo(200, 280, 255, 210);
+context.closePath();
+context.fillStyle = "red";
+context.fill();
+context.stroke();
+
+// зубы
+context.fillStyle = "#FFFFFF";
+context.fillRect(180, 211, 15, 15);
+context.fillRect(205, 211, 15, 15);
+</script>
+</body>
+</html>
